@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Col, Flex, Row, Typography } from 'antd';
+
 import './App.css';
+import 'react-chatbot-kit/build/main.css'
+import ChatBot from './components/chatbot';
+import background from './assets/background_graphic.jpg'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div style={{position: 'relative'}}>
+    <div className='bg-filter' style={{
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      backgroundImage: `url(${background})`,
+      backgroundRepeat: 'repeat',
+      backgroundSize: "100%",
+        }}>
+      </div>
+      <Row style={{minHeight: "100vh", }} justify={'space-between'} align={'middle'}>
+      <Col span={24} style={{padding: 20}}>
+        <Flex align='center' justify='center'>
+          <Typography.Title>Welcome to Smile Zone</Typography.Title>
+        </Flex>
+      </Col>
+      <Col span={24} style={{padding: 20}}>
+        <ChatBot/>
+      </Col>
+      </Row>
+      </div>
   );
 }
 

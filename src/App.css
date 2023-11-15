@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-filter {
+  filter: grayscale() blur(2px) !important; 
+}
