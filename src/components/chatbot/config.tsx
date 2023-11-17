@@ -8,14 +8,7 @@ const config = {
   botName: botName,
   initialMessages: [createChatBotMessage(`Greetings, I’m ${botName}, and I’m here to assist you.`,{
 
-  }),
-  createChatBotMessage(
-    "what I can help you with. You can also type in.",
-    {
-      delay: 400,
-      widget: "overview"
-    }
-  )],
+  })],
   widgets: [
     {
       widgetName: 'dogPicture',

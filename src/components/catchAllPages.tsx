@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { PlasmicComponent, ComponentRenderData } from "@plasmicapp/loader-react";
 import { PLASMIC } from './plasmic-init';
+import { Spin } from 'antd';
 
 
 export function CatchAllPage() {
@@ -21,7 +22,7 @@ export function CatchAllPage() {
     }, []);
   
     if (loading) {
-      return <div>Loading...</div>;
+      return <div style={{width: '100vw', height: '100vh', display:'flex', justifyContent: 'center' , alignItems: 'center'}}><Spin/></div>;
     }
     if (!pageData) {
       return <div>Not found</div>;
