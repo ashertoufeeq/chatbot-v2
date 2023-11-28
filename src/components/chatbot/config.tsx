@@ -1,6 +1,7 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 import DogPicture from './widgets/dogImage'
 import Overview from './widgets/Overview';
+import Suggestions from './widgets/Suggestions';
 
 export const botName = 'SmileBot'
 
@@ -19,6 +20,12 @@ const config = {
     {
       widgetName: 'overview',
       widgetFunc: (props:any) => <Overview {...props} />,
+      props:{},
+      mapStateToProps: ["messages"]
+    },
+    {
+      widgetName: 'suggestions',
+      widgetFunc: (props:any) => <Suggestions {...props} />,
       props:{},
       mapStateToProps: ["messages"]
     },

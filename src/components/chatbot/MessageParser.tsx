@@ -1,4 +1,5 @@
 import React from 'react';
+import * as ChatApiService from '../../interfaces/api/chat/index'
 
 interface IProps {
     createChatBotMessage:any,
@@ -13,45 +14,24 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState,actio
   const [askedName, setAskedName] = React.useState<any>(false)
   const [askedEmail, setAskedEmail] = React.useState<any>(false)
 
+  const [showOptions, setShowOptions] = React.useState<boolean>(true)
+
+  const handleApiResponse = (msg: string) => {
+    ChatApiService.service({msg }).then(({data})=>{
+      actions.handleTextResponse({text: data.response });
+      console.log(data,' test tste');
+      if(data.response.includes("What dental problems are you experiencing?") && showOptions){
+        actions.handleOptions();
+      }else{
+        setShowOptions(true);
+      }
+    }).catch((e)=>{
+      console.log(e,'test')
+    })
+  };
+
   const parse = (message:any) => {
-    if ((message||"").toLowerCase().includes('hello')) {
-      actions.handleHello();
-      if(details?.name && details?.mobile){
-        actions.handleOptions();
-      }
-    }else if ((message||"").toLowerCase().includes('dog')) {
-      actions.handleDog();
-      if(details?.name && details?.mobile){
-        actions.handleOptions();
-      }
-    }else if((message||"").toLowerCase().includes('help') || (message||"").toLowerCase().includes('support')){
-      if(details?.name && details?.mobile){
-        actions.handleOptions();
-      }
-    } 
-    if(!details?.name){
-      if(askedName){
-        setDetails((p:any) => ({...p, name: message}));
-        console.log(message,'message');
-        setAskedName(false);
-        actions.handleTextResponse({text: `Hello ${message}, please tell me your mobile number.`})
-        setAskedEmail(true);
-      }else{
-        setAskedName(true);
-        actions.handleTextResponse({text: 'Before we begin, please tell me your name.'});
-      }
-    }else if(!details?.mobile){
-      if(askedEmail){
-        setDetails((p:any) => ({...p, mobile: message}));
-        console.log(message,'message');
-        setAskedEmail(false);
-        actions.handleTextResponse({text: 'Thank for sharing your details.'});
-        actions.handleOptions();
-      }else{
-        setAskedEmail(true);
-        actions.handleTextResponse({text: `Hello ${details?.name}, please tell me your mobile number.`})
-      }
-    }
+    handleApiResponse(message);
   };
   return (
     <div>

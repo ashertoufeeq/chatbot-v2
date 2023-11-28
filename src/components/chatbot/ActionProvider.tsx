@@ -35,6 +35,20 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
 
     addMessageToState(message);
   };
+  const handleSuggestions = (props:any) => {
+    console.log(props,'here')
+    const message = createChatBotMessage(
+      "Below are some possible options.",
+      {
+        widget: "suggestions",
+        loading: true,
+        terminateLoading: true,
+        payload: {...props}
+      }
+    );
+
+    addMessageToState(message, props.suggestionKey);
+  };
 
   const handleHello = () => {
     const botMessage = createChatBotMessage(`you’ve reached Smile Zone, the best place for your dental needs. I’m ${botName}, and I’m here to assist you. You can ask me anything about our services, prices, locations, or dentists. Or, you can simply book an appointment with one of our experts. How can I help you?`);
@@ -51,7 +65,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
     <div>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
-          actions: {handleHello, handleOptions, handleTextResponse},
+          actions: {handleHello, handleOptions, handleTextResponse, handleSuggestions},
         });
       })}
     </div>
