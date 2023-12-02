@@ -7,7 +7,7 @@ export const botName = 'SmileBot'
 
 const config = {
   botName: botName,
-  initialMessages: [createChatBotMessage(`Greetings, I’m ${botName}, and I’m here to assist you.`,{
+  initialMessages: [createChatBotMessage(`Greetings, I’m ${botName}, and I’m here to assist you. Type 'hello' to start!`,{
 
   })],
   widgets: [
