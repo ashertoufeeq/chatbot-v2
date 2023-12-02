@@ -11,7 +11,7 @@ const Suggestions = (props: {suggestionKey: string, actionProvider: any,payload:
             url: optionObject[key],
             handle: ()=> props.actionProvider.handleTextResponse(
                 {
-                  text:'Thank You! Have a Nice day',
+                  text:"Thank You! Type 'hello' to restart chat",
                 }
                 ),
          });
