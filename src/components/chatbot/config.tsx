@@ -3,7 +3,7 @@ import DogPicture from './widgets/dogImage'
 import Overview from './widgets/Overview';
 import Suggestions from './widgets/Suggestions';
 
-export const botName = 'SmileBot'
+export const botName = 'Corry 2.0'
 
 const config = {
   botName: botName,
