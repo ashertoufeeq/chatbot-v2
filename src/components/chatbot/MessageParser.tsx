@@ -1,5 +1,7 @@
 import React from 'react';
 import * as ChatApiService from '../../interfaces/api/chat/index'
+import {dataForFuzzySearch} from '../constants/index'
+import useFuzzySearch from '../../hooks/useFuzySearch'
 
 interface IProps {
     createChatBotMessage:any,
@@ -16,6 +18,10 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState,actio
 
   const [showOptions, setShowOptions] = React.useState<boolean>(true)
 
+  const {search} = useFuzzySearch({list: dataForFuzzySearch, fuseOptions: {
+    keys: ['title','indications', 'searchOptions'] 
+  }})
+
   const handleApiResponse = (msg: string) => {
     ChatApiService.service({msg }).then(({data})=>{
       actions.handleTextResponse({text: data.response });
@@ -31,6 +37,8 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState,actio
   };
 
   const parse = (message:any) => {
+   const d = search(message);
+   console.log(d,'here is searched ');
     handleApiResponse(message);
   };
   return (

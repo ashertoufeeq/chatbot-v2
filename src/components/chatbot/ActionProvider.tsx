@@ -1,6 +1,7 @@
 import React from 'react';
 import { botName } from './config';
-
+import {dataForFuzzySearch} from '../constants/index'
+import useFuzzySearch from '../../hooks/useFuzySearch'
 
 interface IProps {
   createChatBotMessage:any,
@@ -10,6 +11,9 @@ interface IProps {
 
 const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, children }) => {
 
+  const {search} = useFuzzySearch({list: dataForFuzzySearch, fuseOptions: {
+    keys: ['title','indications', 'searchOptions'] 
+  }})
   const addMessageToState = (botMessage:any, userMessage?: string) => {
     setState((prev:any) => {
     console.log(prev,'previous');
@@ -37,6 +41,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
   };
   const handleSuggestions = (props:any) => {
     console.log(props,'here')
+    // const 
     const message = createChatBotMessage(
       "Below are some possible options.",
       {

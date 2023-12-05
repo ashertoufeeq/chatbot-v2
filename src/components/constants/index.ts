@@ -33,3 +33,24 @@ export const data: Record<string, any> = {
     }
   }
   
+
+export const dataForFuzzySearch = [
+    {
+    title: 'Video Home',
+    url: 'https://bellevilledentistry.ca/video-home',
+    indications: 'Informational',
+    searchOptions: ['Dental videos', 'oral health tips', 'dental education', 'oral hygiene', 'dental care guides', 'Video Home']
+    },
+    {
+        title: 'Services',
+        url: 'https://bellevilledentistry.ca/services',
+        indications: 'Informational',
+        searchOptions: ['Dental treatments', 'dental procedures', 'oral health services', 'dental care options', 'dentistry offerings', 'Services']
+    },
+    {
+        title: 'For New Parents',
+        url: 'https://bellevilledentistry.ca/for-new-parents',
+        indications: 'Informational',
+        searchOptions: ['Pediatric dentistry', 'child dental care', 'infant oral health', 'dental care for babies', 'parenting tips for dental health','For New Parents']
+    },
+]

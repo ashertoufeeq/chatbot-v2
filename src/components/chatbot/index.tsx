@@ -13,9 +13,7 @@ const ChatBot = () => {
     const handleClickChange = (open: boolean) => {
       setClicked(open);
     };
-
     
-
     return (
     <div>
       <Popover
@@ -28,7 +26,6 @@ const ChatBot = () => {
                     //   saveMessages={saveMessages as any}
                 />
         }
-        title="Welcome to Smile Zone"
         trigger="click"
         open={clicked}
         onOpenChange={handleClickChange}
