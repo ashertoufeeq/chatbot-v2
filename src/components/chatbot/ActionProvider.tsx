@@ -1,7 +1,8 @@
 import React from 'react';
 import { botName } from './config';
-import {dataForFuzzySearch} from '../constants/index'
-import useFuzzySearch from '../../hooks/useFuzySearch'
+import {dataForFuzzySearch } from '../constants/index'
+import useFuzzySearch  from '../../hooks/useFuzySearch'
+
 
 interface IProps {
   createChatBotMessage:any,
@@ -10,13 +11,10 @@ interface IProps {
 }
 
 const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, children }) => {
+  const {search} = useFuzzySearch({list: dataForFuzzySearch})
 
-  const {search} = useFuzzySearch({list: dataForFuzzySearch, fuseOptions: {
-    keys: ['title','indications', 'searchOptions'] 
-  }})
   const addMessageToState = (botMessage:any, userMessage?: string) => {
     setState((prev:any) => {
-    console.log(prev,'previous');
       return{
       ...prev,
       messages: [...prev.messages,  ...(userMessage?[{
@@ -39,9 +37,8 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
 
     addMessageToState(message);
   };
+
   const handleSuggestions = (props:any) => {
-    console.log(props,'here')
-    // const 
     const message = createChatBotMessage(
       "Below are some possible options.",
       {
@@ -51,8 +48,34 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
         payload: {...props}
       }
     );
-
     addMessageToState(message, props.suggestionKey);
+  }
+
+  const handleSuggestionsOnText = (props:any) => {
+    const filteredData = search(props?.searchKey);
+    if(filteredData.length>0){
+      const message = createChatBotMessage(
+        "Below are some possible options.",
+        {
+          widget: "suggestionsOnText",
+          loading: true,
+          terminateLoading: true,
+          payload: {...props, filteredData}
+        }
+      );
+      addMessageToState(message);
+    }else{
+      const message = createChatBotMessage(
+        "How can I help you? Below are some possible options.",
+        {
+          widget: "overview",
+          loading: true,
+          terminateLoading: true,
+        }
+      );
+  
+      addMessageToState(message);
+    }
   };
 
   const handleHello = () => {
@@ -70,7 +93,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
     <div>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
-          actions: {handleHello, handleOptions, handleTextResponse, handleSuggestions},
+          actions: {handleHello, handleOptions, handleTextResponse, handleSuggestions, handleSuggestionsOnText},
         });
       })}
     </div>

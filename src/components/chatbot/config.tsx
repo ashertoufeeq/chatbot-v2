@@ -2,6 +2,7 @@ import { createChatBotMessage } from 'react-chatbot-kit';
 import DogPicture from './widgets/dogImage'
 import Overview from './widgets/Overview';
 import Suggestions from './widgets/Suggestions';
+import SuggestionsOnText from './widgets/suggestionsOnText';
 
 export const botName = 'Corry 2.0'
 
@@ -29,6 +30,12 @@ const config = {
       props:{},
       mapStateToProps: ["messages"]
     },
+    {
+      widgetName: 'suggestionsOnText',
+      widgetFunc: (props:any) => <SuggestionsOnText {...props} />,
+      props:{},
+      mapStateToProps: ["messages"]
+    }
   ]
 };
 

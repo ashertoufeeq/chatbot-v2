@@ -12,6 +12,7 @@ const Suggestions = (props: {suggestionKey: string, actionProvider: any,payload:
             handle: ()=> props.actionProvider.handleTextResponse(
                 {
                   text:"Thank You! Type 'hello' to restart chat",
+                  userMessage: key
                 }
                 ),
          });
