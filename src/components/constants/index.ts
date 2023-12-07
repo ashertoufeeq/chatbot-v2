@@ -35,6 +35,7 @@ export const data: Record<string, any> = {
   
 
 
+
   export const dataForFuzzySearch = 
   [
       {
@@ -74,6 +75,9 @@ export const data: Record<string, any> = {
           'Pediatric dentistry',
           'child dental care',
           'infant oral health',
+          'baby',
+          'infant',
+          'parents',
           'dental care for babies',
           'parenting tips for dental health',
           'For New Parents'
@@ -160,7 +164,8 @@ export const data: Record<string, any> = {
           'medication precautions',
           'bisphosphonate use in dentistry',
           'bisphosphonate side effects',
-          'side effects',        
+          'side effects', 
+          'risk',       
           'dental implications of bisphosphonates',
           'Alert - Bisphosphonates'
         ]
@@ -191,7 +196,8 @@ export const data: Record<string, any> = {
           'restoration',
           'dental material',
           'dental material selections',
-          'Filling Materials'
+          'Filling Materials',
+          'filling',
         ]
       },
       {
@@ -274,7 +280,14 @@ export const data: Record<string, any> = {
           'teeth scaling and polishing',
           'Teeth Cleaning and Check-ups',
           'cleaning',
-          'check-ups'
+          'check-ups',
+          'sensitivity',
+          'sudden pain while eating',
+          'sudden pain while chewing',
+          'sudden pain',
+          'bleeding gums',
+          'blood',
+          'pain'
         ]
       },
       {
@@ -344,6 +357,9 @@ export const data: Record<string, any> = {
           'tooth implants',
           'implant dentistry',
           'implant placement',
+          'cosmetic',
+          'appearance',
+          'veneers',
           'placement',
           'Implants'
         ]
@@ -358,6 +374,11 @@ export const data: Record<string, any> = {
           'night-time dental appliances',
           'mouthguards for sleep',
           'nocturnal bite guards',
+          'erosion',
+          'chipped',
+          'grinding',
+          'clenching',
+          'tooth erosion',
           'Night Guards'
         ]
       },
@@ -430,7 +451,10 @@ export const data: Record<string, any> = {
           'partials for missing teeth',
           'partial denture fittings',
           'partial denture care',
-          'Partial Dentures'
+          'Partial Dentures',
+          'chipped tooth',
+          'chipped',
+          'missing teeth'
         ]
       },
       {
@@ -512,8 +536,10 @@ export const data: Record<string, any> = {
           'professional teeth whitening',
           'teeth whitening procedures',
           'teeth bleaching methods',
+          "appearance",
           'tooth color enhancement',
-          'Teeth Whitening'
+          'Teeth Whitening',
+          'cosmetic',
         ]
       },
       {
@@ -526,7 +552,8 @@ export const data: Record<string, any> = {
           'white dental fillings',
           'aesthetic dental fillings',
           'tooth-colored restorations',
-          'White Fillings'
+          'White Fillings',
+          'cavity'
         ]
       },
       {
@@ -567,7 +594,8 @@ export const data: Record<string, any> = {
           " Dr. Ajay Paul's dental services",
           'Belleville Dentist - Dr. Ajay Paul',
           "About",
-          "Dr. Ajay"
+          "Dr. Ajay",
+          "Ajay"
         ]
       },
       {
@@ -579,7 +607,8 @@ export const data: Record<string, any> = {
           'about Dr. Bill Hern',
           " Dr. Bill Hern's dental practice",
           " Dr. Bill Hern's specialties",
-          'Dr. Bill Hern'
+          'Dr. Bill Hern',
+          "bill"
         ]
       },
       {
@@ -591,6 +620,7 @@ export const data: Record<string, any> = {
           'about Dr. Yazdi',
           " Dr. Yazdi's dental expertise",
           " Dr. Yazdi's specialties",
+          "yazdi",
           'Dr. Yazdi'
         ]
       },
