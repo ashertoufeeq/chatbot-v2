@@ -36,6 +36,7 @@ export const data: Record<string, any> = {
 
 
 
+
   export const dataForFuzzySearch = 
   [
       {
@@ -92,6 +93,7 @@ export const data: Record<string, any> = {
           'Pulled',
           'Emergency',
           'Pain',
+    'extraction',
           'emergency dental care',
           'immediate dental solutions',
           'sudden toothache relief',
@@ -286,6 +288,9 @@ export const data: Record<string, any> = {
           'sudden pain while chewing',
           'sudden pain',
           'bleeding gums',
+    'swelling',
+    'gums',
+    'gingivitis',
           'blood',
           'pain'
         ]
@@ -360,6 +365,7 @@ export const data: Record<string, any> = {
           'cosmetic',
           'appearance',
           'veneers',
+    'veneer',
           'placement',
           'Implants'
         ]
@@ -453,6 +459,7 @@ export const data: Record<string, any> = {
           'partial denture care',
           'Partial Dentures',
           'chipped tooth',
+    'denture',
           'chipped',
           'missing teeth'
         ]
