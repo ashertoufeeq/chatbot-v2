@@ -51,6 +51,19 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
     addMessageToState(message, props.suggestionKey);
   }
 
+  const handleContactUs = (props:any) => {
+    const message = createChatBotMessage(
+      "Want to get in touch with us directly?",
+      {
+        widget: "contactUs",
+        loading: true,
+        terminateLoading: true,
+        payload: {...props}
+      }
+    );
+    addMessageToState(message);
+  }
+
   const handleSuggestionsOnText = (props:any) => {
     const filteredData = search(props?.searchKey);
     if(filteredData.length>0){
@@ -93,7 +106,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
     <div>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
-          actions: {handleHello, handleOptions, handleTextResponse, handleSuggestions, handleSuggestionsOnText},
+          actions: {handleHello, handleOptions, handleTextResponse, handleSuggestions, handleSuggestionsOnText, handleContactUs },
         });
       })}
     </div>

@@ -16,8 +16,8 @@ const SuggestionsOnText = (props: {searchKey: string, filteredData: Record<strin
                     {
                       text:"Thank You! Type 'hello' to restart chat",
                       userMessage: item.title
-                    }
-                    );
+                    });
+                    props?.actionProvider.handleContactUs()
                 },
              };
         }));

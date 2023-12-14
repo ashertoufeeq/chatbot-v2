@@ -9,12 +9,13 @@ const Suggestions = (props: {suggestionKey: string, actionProvider: any,payload:
         suggestions.push({
             name: key,
             url: optionObject[key],
-            handle: ()=> props.actionProvider.handleTextResponse(
+            handle: ()=> {props.actionProvider.handleTextResponse(
                 {
                   text:"Thank You! Type 'hello' to restart chat",
                   userMessage: key
-                }
-                ),
+                });
+                props?.actionProvider.handleContactUs();
+            },
          });
         return null;
     })
