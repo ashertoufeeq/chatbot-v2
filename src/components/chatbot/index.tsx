@@ -1,6 +1,6 @@
 import Chatbot from 'react-chatbot-kit'
 
-import config from './config';
+import config, { botName } from './config';
 import MessageParser from './MessageParser';
 import ActionProvider from './ActionProvider';
 import { useState } from 'react';
@@ -30,7 +30,11 @@ const ChatBot = () => {
         open={clicked}
         onOpenChange={handleClickChange}
       >
-        <FloatButton type="primary" icon={<CommentOutlined />}/>
+        <FloatButton style={{zIndex: 10000}} type="primary" icon={<CommentOutlined />}     
+          shape="square"
+          description="Chat"
+          tooltip={`Hello, I am ${botName}`}
+/>
       </Popover>
     </div>
   );

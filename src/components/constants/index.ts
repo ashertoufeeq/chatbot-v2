@@ -251,7 +251,7 @@ export const dataForFuzzySearch =
       indications: 'Dental Procedure',
       searchOptions: [
         'Dental implant problems',
-        'implant complications',
+        'Dental complications',
         'issues with dental implants',
         'impant issue',
         'implant failure',
@@ -385,6 +385,8 @@ export const dataForFuzzySearch =
       url: 'https://bellevilledentistry.ca/implants',
       indications: 'Dental Procedure',
       searchOptions: [
+        'Dental implants',
+        'Dental implant',
         'Dental implants',
         'implant-supported restorations',
         'tooth implants',
