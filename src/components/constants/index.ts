@@ -267,6 +267,7 @@ export const dataForFuzzySearch =
       url: 'https://bellevilledentistry.ca/carivu',
       indications: 'Dental Technology',
       searchOptions: [
+        'cavities',
         'Carivu technology',
         'advanced dental imaging',
         'cavity detection technology',
@@ -601,7 +602,8 @@ export const dataForFuzzySearch =
         'aesthetic dental fillings',
         'tooth-colored restorations',
         'White Fillings',
-        'cavity'
+        'cavity',
+        'cavities'
       ]
     },
     {
@@ -746,11 +748,11 @@ export const dataForFuzzySearch =
       url: 'https://bellevilledentistry.ca/patient-acknowledgement-covid-19-risk',
       indications: 'Informational',
       searchOptions: [
-        'COVID-19 risk acknowledgment form',
+        'COVID risk acknowledgment form',
         'patient health declaration',
         'pandemic risk consent',
-        'COVID-19 screening form',
-        'Patient Acknowledgement COVID-19 Risk',
+        'screening form',
+        'Patient Acknowledgement COVID 19 Risk',
         'covid'
       ]
     },
