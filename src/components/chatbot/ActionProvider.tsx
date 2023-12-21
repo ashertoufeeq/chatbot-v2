@@ -2,6 +2,7 @@ import React from 'react';
 import { botName } from './config';
 import {dataForFuzzySearch } from '../constants/index'
 import useFuzzySearch  from '../../hooks/useFuzySearch'
+import * as QuestionChat  from '../../interfaces/api/chat/questions'
 
 
 interface IProps {
@@ -64,19 +65,52 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
     addMessageToState(message);
   }
 
+  /*
+
+  ChatApiService.service({msg }).then(({data})=>{
+      actions.handleTextResponse({text: data.response });
+      if(data.response.includes("What dental problems are you experiencing?") && showOptions){
+        actions.handleOptions();
+        setOptionHandled(true);
+      }else{
+        setShowOptions(true);
+      }
+    }).catch((e)=>{
+      console.log(e,'test')
+    })
+
+  */
+
   const handleSuggestionsOnText = (props:any) => {
     const filteredData = search(props?.searchKey);
+
     if(filteredData.length>0){
-      const message = createChatBotMessage(
-        "Below are some possible options.",
-        {
-          widget: "suggestionsOnText",
-          loading: true,
-          terminateLoading: true,
-          payload: {...props, filteredData}
-        }
-      );
-      addMessageToState(message);
+      QuestionChat.service({msg: props?.searchKey }).then(({data}:any)=>{
+        console.log(data,'here is our data')
+        const message = createChatBotMessage(
+        `${data.answer}
+        Below are some possible options.`,
+          {
+            widget: "suggestionsOnText",
+            loading: true,
+            terminateLoading: true,
+            payload: {...props, filteredData}
+          }
+        );
+        addMessageToState(message);
+      }).catch((e:any)=>{
+        const message = createChatBotMessage(
+          `Below are some possible options.`,
+            {
+              widget: "suggestionsOnText",
+              loading: true,
+              terminateLoading: true,
+              payload: {...props, filteredData}
+            }
+          );
+          addMessageToState(message);
+        console.log(e,'test');
+      })
     }else{
       const message = createChatBotMessage(
         "How can I help you? Below are some possible options.",
