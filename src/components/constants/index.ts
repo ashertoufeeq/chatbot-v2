@@ -317,8 +317,13 @@ export const dataForFuzzySearch =
         'ClearCorrect treatment',
         'ClearCorrect Alignment',
 	      'Crooked teeth',
+        'crooked',
         'gaps',
+        'gap',
+        'gap between teeth',
+        'gap between teeths',
         'gaps between teeths',
+        'gaps between teeth',
 	      'alignment',
 	      'braces'
       ]
@@ -505,6 +510,10 @@ export const dataForFuzzySearch =
         'denture',
         'Chipped',
         'gaps',
+        'gap',
+        'gap between teeth',
+        'gap between teeths',
+        'gaps between teeths',
         'Gaps between teeth',
         'Missing teeth',
         'alignment'
