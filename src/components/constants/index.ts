@@ -215,7 +215,9 @@ export const dataForFuzzySearch =
         'teeth alignment',
         'orthodontic braces types',
         'orthodontic options',
-        'Orthodontic Care'
+        'Orthodontic Care',
+        'Crooked teeth',
+        'crooked',
       ]
     },
     {
@@ -293,10 +295,12 @@ export const dataForFuzzySearch =
         'sudden pain while eating',
         'sudden pain while chewing',
         'sudden pain',
+        'Infection',
+        'Mouth sores',
         'bleeding gums',
-	'swelling',
-	'gums',
-	'gingivitis',
+	      'swelling',
+	      'gums',
+	      'gingivitis',
         'blood',
         'pain'
       ]
@@ -311,7 +315,12 @@ export const dataForFuzzySearch =
         'orthodontic aligners',
         'clear aligner therapy',
         'ClearCorrect treatment',
-        'ClearCorrect Alignment'
+        'ClearCorrect Alignment',
+	      'Crooked teeth',
+        'gaps',
+        'gaps between teeths',
+	      'alignment',
+	      'braces'
       ]
     },
   {
@@ -493,9 +502,12 @@ export const dataForFuzzySearch =
         'partial denture care',
         'Partial Dentures',
         'chipped tooth',
-	'denture',
-        'chipped',
-        'missing teeth'
+        'denture',
+        'Chipped',
+        'gaps',
+        'Gaps between teeth',
+        'Missing teeth',
+        'alignment'
       ]
     },
     {
@@ -569,6 +581,21 @@ export const dataForFuzzySearch =
       ]
     },
     {
+      title: 'Apnea',
+      url: 'https://bellevilledentistry.ca/snoring-and-apnea',
+      indications: 'Sleep Dentistry',
+      searchOptions: [
+        'Sleep apnea solutions',
+        'snoring remedies',
+        'sleep disorder treatments',
+        'apnea dental devices',
+        'sleep-related breathing issues',
+        'Snoring and Apnea',
+        "Apnea",
+        "sleep",
+      ]
+    },
+    {
       title: 'Teeth Whitening',
       url: 'https://bellevilledentistry.ca/teeth-whitening',
       indications: 'Cosmetic Dentistry',
@@ -580,15 +607,18 @@ export const dataForFuzzySearch =
         "appearance",
         'tooth color enhancement',
         'Teeth Whitening',
-        'cosmetic',
-	'whitening',
-	'whiten',
-	'color',
-	'looks',
-	'looking',	
-	'celebrity teeth',
-	'celebrity',
-	'white'
+        'Cosmetic',
+        'smile',
+        'whitening',
+        'whiten',
+        'color',
+        'looks',
+        'looking',	
+        'celebrity teeth',
+        'Celebrity',
+        'Stained teeth',
+        'stain',
+        'white'
       ]
     },
     {
@@ -811,6 +841,19 @@ export const dataForFuzzySearch =
         'legal consultation for dental clients',
         'attorney services for dental patients',
         'Law Service Exclusive to Our Clients'
+      ]
+    },
+    {
+      title: 'Contact Us',
+      url: 'https://bellevilledentistry.ca/contact-us',
+      indications: 'Informational',
+      searchOptions: [
+        'Appointments',
+        'book', 
+        'Book an appointment',
+        'Reservation',
+      'Call',
+        'Contact us',
       ]
     },
   ]

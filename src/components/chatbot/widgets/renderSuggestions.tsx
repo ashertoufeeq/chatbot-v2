@@ -1,9 +1,36 @@
-import { Space, Tag } from "antd";
+import {useState, useEffect} from 'react';
+import { Space, Tag, Typography } from "antd";
 
 const Suggestions = (props:any) => {
+  const [displayText, setDisplayText] = useState('');
+
+  useEffect(() => {
+    const text = props?.text || '';
+    let currentIndex = 0;
+
+    const intervalId = setInterval(() => {
+      setDisplayText((prevText) => prevText + (text[currentIndex]? text[currentIndex]:''));
+      currentIndex++;
+
+      if (currentIndex === (text.length - 1)) {
+        clearInterval(intervalId);
+      }
+    }, 10); // Adjust the interval based on your preference
+
+    return () => clearInterval(intervalId);
+  }, [props?.text]);
+
     return (
       <div className="options">
-        <Space size={[0, 8]} wrap>
+        <Space size={[8, 8]} wrap>
+         {displayText? <Typography.Text type="secondary" className="typewriter">
+            {displayText}
+          </Typography.Text>: <Typography.Text type="secondary" className="typewriter">
+            {'...'}
+          </Typography.Text>}
+          <br/>
+        </Space>
+        <Space size={[8, 8]} wrap>
               {props.suggestions.map(({name, url,handle, color}: {name: string, url: string, color?: string, handle: () => void}, ind: number) => {
             return (
                 <a href={url} target="_blank" rel="noreferrer">

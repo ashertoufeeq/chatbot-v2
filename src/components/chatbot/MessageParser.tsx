@@ -20,6 +20,8 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState,actio
   const [optionHandled, setOptionHandled] = React.useState<boolean>(false)
 
   const handleApiResponse = (msg: string) => {
+    const t = actions.startLoading()
+    console.log(t,'here');
     ChatApiService.service({msg }).then(({data})=>{
       actions.handleTextResponse({text: data.response });
       if(data.response.includes("What dental problems are you experiencing?") && showOptions){
@@ -28,6 +30,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState,actio
       }else{
         setShowOptions(true);
       }
+      actions.stopLoading(t)
     }).catch((e)=>{
       console.log(e,'test')
     })

@@ -2,7 +2,7 @@ import React from 'react';
 import { botName } from './config';
 import {dataForFuzzySearch } from '../constants/index'
 import useFuzzySearch  from '../../hooks/useFuzySearch'
-import * as QuestionChat  from '../../interfaces/api/chat/questions'
+import { message } from 'antd';
 
 
 interface IProps {
@@ -24,6 +24,29 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
         id: Math.random()+ new Date().getTime()
     }]:[]),botMessage,],
   }})};
+
+
+  const startLoading = (options:any) => {
+    const message = createChatBotMessage(
+      "loading...",
+      {
+        loading: true,
+        terminateLoading: false,
+        ...options
+      }
+    );
+    addMessageToState(message);
+    console.log(message,'message');
+    return message.id
+  };
+
+  const stopLoading = (id:string) => {
+    setState((p:any) => ({
+      ...p,
+      messages: (p?.messages || []).filter((item:any) => item.id !== id)
+    }))
+  };
+
 
   const handleOptions = (options:any) => {
     const message = createChatBotMessage(
@@ -83,13 +106,9 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
 
   const handleSuggestionsOnText = (props:any) => {
     const filteredData = search(props?.searchKey);
-
     if(filteredData.length>0){
-      QuestionChat.service({msg: props?.searchKey }).then(({data}:any)=>{
-        console.log(data,'here is our data')
-        const message = createChatBotMessage(
-        `${data.answer}
-        Below are some possible options.`,
+      const message = createChatBotMessage(
+        `Below are some possible options.`,
           {
             widget: "suggestionsOnText",
             loading: true,
@@ -98,19 +117,6 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
           }
         );
         addMessageToState(message);
-      }).catch((e:any)=>{
-        const message = createChatBotMessage(
-          `Below are some possible options.`,
-            {
-              widget: "suggestionsOnText",
-              loading: true,
-              terminateLoading: true,
-              payload: {...props, filteredData}
-            }
-          );
-          addMessageToState(message);
-        console.log(e,'test');
-      })
     }else{
       const message = createChatBotMessage(
         "How can I help you? Below are some possible options.",
@@ -140,7 +146,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
     <div>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
-          actions: {handleHello, handleOptions, handleTextResponse, handleSuggestions, handleSuggestionsOnText, handleContactUs },
+          actions: {handleHello, handleOptions,startLoading, stopLoading, handleTextResponse, handleSuggestions, handleSuggestionsOnText, handleContactUs },
         });
       })}
     </div>
