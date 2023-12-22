@@ -50,7 +50,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
 
   const handleOptions = (options:any) => {
     const message = createChatBotMessage(
-      "How can I help you? Below are some possible options.",
+      "How can I help you? Please make a selection from menu or enter keyword.",
       {
         widget: "overview",
         loading: true,
@@ -64,7 +64,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
 
   const handleSuggestions = (props:any) => {
     const message = createChatBotMessage(
-      "Below are some possible options.",
+      "Please make a selection from menu or enter keyword.",
       {
         widget: "suggestions",
         loading: true,
@@ -108,7 +108,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
     const filteredData = search(props?.searchKey);
     if(filteredData.length>0){
       const message = createChatBotMessage(
-        `Below are some possible options.`,
+        `please make a selection from menu or enter keyword.`,
           {
             widget: "suggestionsOnText",
             loading: true,
@@ -119,7 +119,7 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
         addMessageToState(message);
     }else{
       const message = createChatBotMessage(
-        "How can I help you? Below are some possible options.",
+        "How can I help you? Please make a selection from menu or enter keyword.",
         {
           widget: "overview",
           loading: true,
