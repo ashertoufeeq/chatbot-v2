@@ -1,3 +1,3 @@
 export const config = {
-    baseUrl: 'https://bananachat.onrender.com'
+    baseUrl: 'https://belleville.headlinetext.com'
 }
