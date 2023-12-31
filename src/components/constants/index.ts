@@ -865,4 +865,25 @@ export const dataForFuzzySearch =
         'Contact us',
       ]
     },
+    {
+      title: 'Teeth Replacement',
+      url: 'https://bellevilledentistry.ca/budgeting-teeth-replacement',
+      searchOptions: [
+        'dentures',
+        'removed', 
+        'replaced',
+        'missing',
+        'replacement',
+        'teeth removed',
+        'teeth replacement',
+        'teeth missing',
+        'teeth replaced',
+        'teeth dentures',
+        'tooth removed',
+        'tooth replacement',
+        'tooth missing',
+        'tooth replaced',
+        'tooth dentures',
+      ]
+    },
   ]

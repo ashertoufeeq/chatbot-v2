@@ -5,8 +5,8 @@ import Suggestions from './widgets/Suggestions';
 import SuggestionsOnText from './widgets/suggestionsOnText';
 import { Avatar, Button, Divider, Typography } from 'antd';
 import IConfig from 'react-chatbot-kit/build/src/interfaces/IConfig';
-import phoneIcon from '../../assets/telephone.png'
-import mailIcon from '../../assets/mail.png'
+// import phoneIcon from '../../assets/telephone.png'
+// import mailIcon from '../../assets/mail.png'
 import { mail, phoneNumber } from '../constants';
 
 export const botName = 'Corry 2.0'
@@ -24,12 +24,12 @@ const config: IConfig = {
       <div  style={{display: 'flex', justifyContent: 'center'}}>
       <a href={`tel:${phoneNumber}`}>
         <Button size={'small'} style={{marginRight: 10}}>
-          <Avatar shape="square" src={phoneIcon} size={14} style={{margin: 0, padding: 0}}/>
+          <Avatar shape="square" src={'/telephone.png'} size={14} style={{margin: 0, padding: 0}}/>
         </Button>
         </a>
         <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${mail}`} target='_blank' rel="noreferrer">
         <Button size={'small'}>
-          <Avatar shape="square" src={mailIcon} size={14} style={{margin: 0, padding: 0}}/>
+          <Avatar shape="square" src={'/mail.png'} size={14} style={{margin: 0, padding: 0}}/>
         </Button>
         </a>
         </div>

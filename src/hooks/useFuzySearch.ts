@@ -7,11 +7,43 @@ const useData = ({list} : {
 	let search = searchPattern;
 	const splitSearch = (searchPattern || '').split(' ');
 	console.log(splitSearch, 'here')
+	
 	if((splitSearch || [])?.length> 1 && splitSearch.includes('dental')){
 		console.log(splitSearch, 'here 123678')
 		search = (splitSearch || []).filter(item => item !== 'dental').join(' ')
 	}
-	console.log(search,'search');
+	if((splitSearch || [])?.length> 1 && (
+		splitSearch.includes('dentures')||
+		splitSearch.includes('replacement') ||
+		splitSearch.includes('missing') ||
+		splitSearch.includes('replaced') ||
+		splitSearch.includes('removed') ||
+		splitSearch.includes('remove') ||
+		splitSearch.includes('replace') ||
+		splitSearch.includes('denture')
+		)){
+			return [{
+				title: 'Teeth Replacement',
+				url: 'https://bellevilledentistry.ca/budgeting-teeth-replacement',
+				searchOptions: [
+				  'dentures',
+				  'removed', 
+				  'replaced',
+				  'missing',
+				  'replacement',
+				  'teeth removed',
+				  'teeth replacement',
+				  'teeth missing',
+				  'teeth replaced',
+				  'teeth dentures',
+				  'tooth removed',
+				  'tooth replacement',
+				  'tooth missing',
+				  'tooth replaced',
+				  'tooth dentures',
+				]
+			  }]
+	}
 
 	const searchSounds = soundex((search).toLowerCase());
 	
