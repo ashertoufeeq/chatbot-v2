@@ -12,16 +12,18 @@ const useData = ({list} : {
 		console.log(splitSearch, 'here 123678')
 		search = (splitSearch || []).filter(item => item !== 'dental').join(' ')
 	}
-	if((splitSearch || [])?.length> 1 && (
-		splitSearch.includes('dentures')||
-		splitSearch.includes('replacement') ||
-		splitSearch.includes('missing') ||
-		splitSearch.includes('replaced') ||
-		splitSearch.includes('removed') ||
-		splitSearch.includes('remove') ||
-		splitSearch.includes('replace') ||
-		splitSearch.includes('denture')
-		)){
+	if( 
+		splitSearch?.includes('dentures')||
+		splitSearch?.includes('replacement') ||
+		splitSearch?.includes('missing') ||
+		splitSearch?.includes('replaced') ||
+		splitSearch?.includes('removed') ||
+		splitSearch?.includes('remove') ||
+		splitSearch?.includes('removes') ||
+		splitSearch?.includes('replace') ||
+		splitSearch?.includes('replaces') ||
+		splitSearch?.includes('denture') ||
+		splitSearch?.includes('replacements')){
 			return [{
 				title: 'Teeth Replacement',
 				url: 'https://bellevilledentistry.ca/budgeting-teeth-replacement',
