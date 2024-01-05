@@ -1,6 +1,7 @@
 
 export const phoneNumber = '+16139661225';
-export const mail = 'dentistrybelleville@gmail.com';
+export const mail = 'corry.Waterfrontdentistry@gmail.com';
+export const mailCC = 'lori.Waterfrontdentistry@gmail.com';
 
 export const data: Record<string, any> = {
     'Gaps Between Teeth & Missing Teeth': {

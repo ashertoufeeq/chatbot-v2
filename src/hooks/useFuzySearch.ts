@@ -5,7 +5,9 @@ const useData = ({list} : {
 }) => {
   const search = (searchPattern: string) => {
 	let search = searchPattern;
-	const splitSearch = (searchPattern || '').split(' ');
+	const splitSearchUpperCase = (searchPattern || '').split(' ');
+
+	const splitSearch = splitSearchUpperCase.map(item => item.toLowerCase());
 	console.log(splitSearch, 'here')
 	
 	if((splitSearch || [])?.length> 1 && splitSearch.includes('dental')){
@@ -23,6 +25,8 @@ const useData = ({list} : {
 		splitSearch?.includes('replace') ||
 		splitSearch?.includes('replaces') ||
 		splitSearch?.includes('denture') ||
+		(splitSearch?.includes('implant') && (!splitSearch?.includes('complications') && !splitSearch?.includes('complication')))||
+		(splitSearch?.includes('implants') && (!splitSearch?.includes('complications') && !splitSearch?.includes('complication'))) ||
 		splitSearch?.includes('replacements')){
 			return [{
 				title: 'Teeth Replacement',
