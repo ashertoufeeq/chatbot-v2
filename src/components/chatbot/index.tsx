@@ -4,7 +4,7 @@ import config, { botName } from './config';
 import MessageParser from './MessageParser';
 import ActionProvider from './ActionProvider';
 import { useState } from 'react';
-import { FloatButton, Popover } from 'antd';
+import { FloatButton, Popover, Tooltip } from 'antd';
 import { CommentOutlined, } from '@ant-design/icons';
 
 const ChatBot = () => {
@@ -30,11 +30,12 @@ const ChatBot = () => {
         open={clicked}
         onOpenChange={handleClickChange}
       >
-        <FloatButton style={{zIndex: 10000}} type="primary" icon={<CommentOutlined />}     
-          shape="square"
-          description="Chat"
-          tooltip={`Hello, I am ${botName}`}
-/>
+        <Tooltip title={`Hello, I am ${botName} chat with me!`} open={!clicked} placement='left'>
+          <FloatButton style={{zIndex: 10000}} type="primary" icon={<CommentOutlined />}     
+            shape="square"
+            description="Chat"
+            />
+          </Tooltip>
       </Popover>
     </div>
   );

@@ -9,6 +9,8 @@ const Suggestions = (props: {suggestionKey: string, actionProvider: any,payload:
     const [answer, setAnswer] = useState<string | null>('');
 
     useEffect(()=>{
+      console.log('called 1',props?.payload?.suggestionKey);
+
         QuestionChat.service({msg: props?.payload?.suggestionKey }).then(({data}:any)=>{
             setAnswer(data.answer);
           }).catch((e:any)=>{

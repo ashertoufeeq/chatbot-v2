@@ -7,7 +7,8 @@ export const data: Record<string, any> = {
     'Gaps Between Teeth & Missing Teeth': {
         'Bridges': 'https://bellevilledentistry.ca/bridges',
         'ClearCorrect Alignment': 'https://bellevilledentistry.ca/clearcorrect-alignment',
-        'Partial Dentures': 'https://bellevilledentistry.ca/partial-dentures'
+        'Partial Dentures': 'https://bellevilledentistry.ca/partial-dentures',
+        'Implants': 'https://bellevilledentistry.ca/budgeting-teeth-replacement'
     },
     'Information about our Practice': {
 	'Tour': 'https://bellevilledentistry.ca/gallery',
@@ -20,7 +21,9 @@ export const data: Record<string, any> = {
         'Crown': 'https://bellevilledentistry.ca/crown',
         'Crown Lengthening': 'https://bellevilledentistry.ca/crown-lengthening',
         'Replacement Tooth': 'https://bellevilledentistry.ca/replacement-tooth',
-        'Dental Trauma': 'https://bellevilledentistry.ca/dental-trauma'
+        'Dental Trauma': 'https://bellevilledentistry.ca/dental-trauma',
+        'Root Canal': 'https://bellevilledentistry.ca/root-canals',
+        'Implants': 'https://bellevilledentistry.ca/budgeting-teeth-replacement',
     },
     'Oral Cancer Screening': {
         'Oral Cancer Screening': 'https://bellevilledentistry.ca/oral-cancer-screening',
@@ -35,6 +38,9 @@ export const data: Record<string, any> = {
     },
     'Cavity': {
         'Fillings': 'https://bellevilledentistry.ca/white-fillings'
+    },
+    'Implants': {
+      'Tooth Replacements': 'https://bellevilledentistry.ca/budgeting-teeth-replacement'
     }
   }
   
@@ -345,7 +351,7 @@ export const dataForFuzzySearch =
       ]
     },
     {
-      title: 'Primary Teeth',
+      title: 'Crown',
       url: 'https://bellevilledentistry.ca/crown',
       indications: 'Dental Procedure',
       searchOptions: [
@@ -355,12 +361,11 @@ export const dataForFuzzySearch =
         'tooth crown restoration',
         'dental cap',
         'Crown',
-	'crown',
-	'primary teeth',
-	'teeth',
-	'knowledge',
-	'education',
-	'primary'
+        'crown',
+        'teeth',
+        'knowledge',
+        'education',
+        'primary'
       ]
     },
     {
@@ -674,44 +679,50 @@ export const dataForFuzzySearch =
       ]
     },
     {
-      title: 'Belleville Dentist - Dr. Ajay Paul',
+      title: 'Doctor Ajay Paul',
       url: 'https://bellevilledentistry.ca/belleville-dentist-dr-ajay-paul',
       indications: 'Informational',
       searchOptions: [
-        "Dr. Ajay Paul's dental practice details",
-        " Dr. Ajay Paul's expertise",
+        "Dr Ajay Paul's dental practice details",
+        "Dr Ajay Paul's expertise",
         'about Dr. Ajay Paul',
-        " Dr. Ajay Paul's dental services",
+        " Dr Ajay Paul's dental services",
         'Belleville Dentist - Dr. Ajay Paul',
         "About",
-        "Dr. Ajay",
-        "Ajay"
+        "Dr Ajay",
+        "Ajay",
+        "Pauls",
+        'dr paul',
+        'dr pauls',
+        'paul'
       ]
     },
     {
-      title: 'Dr. Bill Hern',
+      title: 'Doctor Bill Hern',
       url: 'https://bellevilledentistry.ca/dr-bill-hern',
       indications: 'Informational',
       searchOptions: [
-        "Dr. Bill Hern's dental expertise",
-        'about Dr. Bill Hern',
-        " Dr. Bill Hern's dental practice",
-        " Dr. Bill Hern's specialties",
-        'Dr. Bill Hern',
+        "dr Bill Hern's dental expertise",
+        'about Bill Hern',
+        "dr Bill Hern's dental",
+        "dr Bill Hern's specialties",
+        'dr Bill Hern',
         "bill"
       ]
     },
     {
-      title: 'Dr. Yazdi',
+      title: 'Doctor Yazdi',
       url: 'https://bellevilledentistry.ca/dr-yazdi',
       indications: 'Informational',
       searchOptions: [
-        "Dr. Yazdi's dental services",
-        'about Dr. Yazdi',
-        " Dr. Yazdi's dental expertise",
-        " Dr. Yazdi's specialties",
+        "Dr Yazdi's dental services",
+        'about Dr Yazdi',
+        "Dr Yazdi's dental expertise",
+        "Dr Yazdi's specialties",
+        "dr Yazdi's specialties",
         "yazdi",
-        'Dr. Yazdi'
+        'Dr Yazdi',
+        'dr Yazdi'
       ]
     },
     {
@@ -888,3 +899,5 @@ export const dataForFuzzySearch =
       ]
     },
   ]
+
+  export const doctorsTitle  = ['Doctor Ajay Paul', 'Doctor Bill Hern', 'Doctor Yazdi'];

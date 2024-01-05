@@ -7,7 +7,7 @@ const Suggestions = (props:any) => {
   useEffect(() => {
     const text = props?.text || '';
     let currentIndex = 0;
-
+    
     const intervalId = setInterval(() => {
       setDisplayText((prevText) => prevText + (text[currentIndex]? text[currentIndex]:''));
       currentIndex++;
@@ -26,7 +26,7 @@ const Suggestions = (props:any) => {
          {displayText? <Typography.Text type="secondary" className="typewriter">
             {displayText}
           </Typography.Text>: <Typography.Text type="secondary" className="typewriter">
-            {'...'}
+            {props?.fetching?'...':''}
           </Typography.Text>}
           <br/>
         </Space>
