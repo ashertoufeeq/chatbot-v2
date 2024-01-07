@@ -11,7 +11,7 @@ export const data: Record<string, any> = {
         'Implants': 'https://bellevilledentistry.ca/budgeting-teeth-replacement'
     },
     'Information about our Practice': {
-	'Tour': 'https://bellevilledentistry.ca/gallery',
+	  'Tour': 'https://bellevilledentistry.ca/gallery',
         'Dr. Paul': 'https://bellevilledentistry.ca/belleville-dentist-dr-ajay-paul',
         'Dr. Bill Hern': 'https://bellevilledentistry.ca/dr-bill-hern',
         'Dr. Yazdi': 'https://bellevilledentistry.ca/dr-yazdi'
@@ -900,4 +900,4 @@ export const dataForFuzzySearch =
     },
   ]
 
-  export const doctorsTitle  = ['Doctor Ajay Paul', 'Doctor Bill Hern', 'Doctor Yazdi'];
+  export const doctorsTitle  = ['Doctor Ajay Paul', 'Doctor Bill Hern', 'Doctor Yazdi', 'Contact Us'];

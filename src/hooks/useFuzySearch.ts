@@ -113,6 +113,26 @@ const useData = ({list} : {
 				]
 			}]
 	}
+	if( 
+		splitSearch?.includes('appointment')||
+		splitSearch?.includes('appointments') ||  
+		splitSearch?.includes('consultation') ||
+		splitSearch?.includes('consult') 
+		){
+			return [{
+				title: 'Contact Us',
+				url: 'https://bellevilledentistry.ca/contact-us',
+				indications: 'Informational',
+				searchOptions: [
+				  'Appointments',
+				  'book', 
+				  'Book an appointment',
+				  'Reservation',
+				  'Call',
+				  'Contact us',
+				]
+			  }]
+	}
 
 	const searchSounds = soundex((search).toLowerCase());
 	
