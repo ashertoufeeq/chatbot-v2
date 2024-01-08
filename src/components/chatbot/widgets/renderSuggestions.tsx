@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Space, Tag, Typography } from "antd";
+import Timings from './timings';
 
 const Suggestions = (props:any) => {
   const [displayText, setDisplayText] = useState('');
@@ -33,6 +34,7 @@ const Suggestions = (props:any) => {
         <Space size={[8, 8]} wrap>
               {props.suggestions.map(({name, url,handle, color}: {name: string, url: string, color?: string, handle: () => void}, ind: number) => {
             return (
+              <div style={{display: 'flex', flexDirection: 'column'}}>
                 <a href={url} target="_blank" rel="noreferrer">
                     <Tag
                         onClick={()=>{
@@ -46,6 +48,11 @@ const Suggestions = (props:any) => {
                         {name}
                     </Tag>
                 </a>
+                  {name === 'Contact Us' && 
+                    <div style={{width: '100%'}}>
+                        <Timings />
+                    </div>}
+                </div>
             );
           })}
         </Space>

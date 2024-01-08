@@ -28,6 +28,7 @@ const SuggestionsOnText = (props: {searchKey: string, filteredData: Record<strin
             return {
                 name: item.title,
                 url: item.url,
+                businessTimings: item.businessTimings,
                 handle: ()=> {
                     props?.actionProvider.handleTextResponse(
                     {
@@ -40,7 +41,7 @@ const SuggestionsOnText = (props: {searchKey: string, filteredData: Record<strin
         }));
     },[])
 
-    return <>{(suggestions || [])?.length>0? <RenderSuggestion text={includeDoctor?'':answer} suggestions={suggestions} {...props} />:<div>
+    return <>{(suggestions || [])?.length>0? <RenderSuggestion fetching={fetching} text={includeDoctor?'':answer} suggestions={suggestions} {...props} />:<div>
         Opps! I am unable to find anything.
         </div>}</>;
 };    

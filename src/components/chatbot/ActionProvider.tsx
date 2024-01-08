@@ -1,6 +1,6 @@
 import React from 'react';
 import { botName } from './config';
-import {dataForFuzzySearch } from '../constants/index'
+import {dataForFuzzySearch, timingKey } from '../constants/index'
 import useFuzzySearch  from '../../hooks/useFuzySearch'
 import { message } from 'antd';
 
@@ -64,6 +64,8 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState, chil
 
   const handleSuggestions = (props:any) => {
     const message = createChatBotMessage(
+      props.suggestionKey === timingKey?
+      "We are delighted to serve you during the following business hours":
       "Please make a selection from menu or enter keyword.",
       {
         widget: "suggestions",

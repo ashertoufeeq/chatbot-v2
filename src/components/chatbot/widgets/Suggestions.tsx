@@ -1,7 +1,8 @@
 import RenderSuggestion from './renderSuggestions';
-import {data } from '../../constants/index'
+import {data, timingKey } from '../../constants/index'
 import { useEffect, useState } from 'react';
 import * as QuestionChat  from '../../../interfaces/api/chat/questions'
+import BusinessHours from './timings';
 
 const Suggestions = (props: {suggestionKey: string, actionProvider: any,payload: Record<string, any>}) => {
     const optionObject = data[props?.payload?.suggestionKey];
@@ -9,8 +10,6 @@ const Suggestions = (props: {suggestionKey: string, actionProvider: any,payload:
     const [answer, setAnswer] = useState<string | null>('');
 
     useEffect(()=>{
-      console.log('called 1',props?.payload?.suggestionKey);
-
         QuestionChat.service({msg: props?.payload?.suggestionKey }).then(({data}:any)=>{
             setAnswer(data.answer);
           }).catch((e:any)=>{
@@ -33,7 +32,7 @@ const Suggestions = (props: {suggestionKey: string, actionProvider: any,payload:
         return null;
     })
 
-    return <RenderSuggestion suggestions={suggestions} text={answer} {...props} />;
+    return props?.payload?.suggestionKey=== timingKey? <BusinessHours/> : <RenderSuggestion suggestions={suggestions} text={answer} {...props} />;
 };    
 
 export default Suggestions;

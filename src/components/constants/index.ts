@@ -2,6 +2,17 @@
 export const phoneNumber = '+16139661225';
 export const mail = 'corry.Waterfrontdentistry@gmail.com';
 export const mailCC = 'lori.Waterfrontdentistry@gmail.com';
+export const timingKey = 'Timings';
+
+export const businessTimings = [
+  { day: 'Monday', timing: '8:30 am – 5 pm' },
+  { day: 'Tuesday', timing: '8:30 am – 6 pm' },
+  { day: 'Wednesday', timing: '8:30 am – 6 pm' },
+  { day: 'Thursday', timing: '8:30 am – 5 pm' },
+  { day: 'Friday', timing: '8:30 am – 1:30 pm' },
+  { day: 'Saturday', timing: '10 am – 3 pm' },
+  { day: 'Sunday', timing: 'Closed' },
+] 
 
 export const data: Record<string, any> = {
     'Gaps Between Teeth & Missing Teeth': {
@@ -41,7 +52,8 @@ export const data: Record<string, any> = {
     },
     'Implants': {
       'Tooth Replacements': 'https://bellevilledentistry.ca/budgeting-teeth-replacement'
-    }
+    },
+    'Timings': {}
   }
   
 
@@ -866,6 +878,7 @@ export const dataForFuzzySearch =
     },
     {
       title: 'Contact Us',
+      businessTimings,
       url: 'https://bellevilledentistry.ca/contact-us',
       indications: 'Informational',
       searchOptions: [
@@ -873,7 +886,7 @@ export const dataForFuzzySearch =
         'book', 
         'Book an appointment',
         'Reservation',
-      'Call',
+        'Call',
         'Contact us',
       ]
     },
