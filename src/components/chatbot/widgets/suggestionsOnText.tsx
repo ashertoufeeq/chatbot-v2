@@ -15,8 +15,8 @@ const SuggestionsOnText = (props: {searchKey: string, filteredData: Record<strin
       console.log('called 2',props?.payload?.searchKey );
       setFetching(true);
       QuestionChat.service({msg: props?.payload?.searchKey }).then(({data}:any)=>{
-            setAnswer(data.answer);
-            setFetching(false);
+              setAnswer(data.answer);
+              setFetching(false);
           }).catch((e:any)=>{
             console.log(e,'test');
             setFetching(false);

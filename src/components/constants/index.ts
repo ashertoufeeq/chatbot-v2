@@ -888,6 +888,17 @@ export const dataForFuzzySearch =
         'Reservation',
         'Call',
         'Contact us',
+        'Opening hours',
+        'Operational hours',
+        'Business hours',
+        'Operating times',
+        'Schedule',
+        'operation',
+        'Hours of operation',
+        'Opening schedule',
+        'Operational schedule',
+        'Time of operation',
+        'Business schedule'
       ]
     },
     {

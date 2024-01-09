@@ -12,22 +12,20 @@ interface IProps {
 
 const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState,actions, children }) => {
   
-  // const [details, setDetails] = React.useState<any>(null)
-  // const [askedName, setAskedName] = React.useState<any>(false)
-  // const [askedEmail, setAskedEmail] = React.useState<any>(false)
 
+  const [firstMsg, setFirstMsg] = React.useState(true)
   const [showOptions, setShowOptions] = React.useState<boolean>(true)
   const [optionHandled, setOptionHandled] = React.useState<boolean>(false)
 
   const handleApiResponse = (msg: string) => {
     const t = actions.startLoading()
-    console.log(t,'here');
-    ChatApiService.service({msg }).then(({data})=>{
+    ChatApiService.service({msg: firstMsg?'hello': msg }).then(({data})=>{
       actions.handleTextResponse({text: data.response });
       if(data.response.includes("What dental problems are you experiencing?") && showOptions){
         actions.handleOptions();
         setOptionHandled(true);
       }else{
+        setFirstMsg(false);
         setShowOptions(true);
       }
       actions.stopLoading(t)

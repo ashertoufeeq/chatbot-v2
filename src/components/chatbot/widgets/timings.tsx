@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card,  Typography } from 'antd';
 import { businessTimings } from '../../constants';
-
+import ContactUs from '../widgets/contactUs'
 const { Title } = Typography;
 
 interface BusinessTiming {
@@ -18,6 +18,8 @@ const BusinessHours: React.FC = () => {
         <span style={{ fontWeight: 'bold', fontSize: '14px' }}>{item.day}</span>
         <span style={{ fontSize: '12px' }}>{item.timing}</span>
        </div>)))}
+       <br/>
+       <ContactUs/>
       </Card>
     </div>
   );
