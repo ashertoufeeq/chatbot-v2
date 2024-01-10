@@ -391,8 +391,8 @@ export const dataForFuzzySearch =
         'crown lengthening procedures',
         'gum tissue reshaping',
         'reshaping',
-	'crowns',
-	'crown',
+        'crowns',
+        'crown',
         'gum tissue',
         'Dental Procedure',
         'Crown Lengthening'
