@@ -374,6 +374,8 @@ export const dataForFuzzySearch =
         'dental cap',
         'Crown',
         'crown',
+        'Crowns',
+        'crowns',
         'teeth',
         'knowledge',
         'education',
@@ -393,6 +395,8 @@ export const dataForFuzzySearch =
         'reshaping',
         'crowns',
         'crown',
+        'Crowns',
+        'crowns',
         'gum tissue',
         'Dental Procedure',
         'Crown Lengthening'
