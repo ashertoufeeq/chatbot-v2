@@ -1,7 +1,7 @@
 
-export const phoneNumber = '+16139661225';
-export const mail = 'corry.Waterfrontdentistry@gmail.com';
-export const mailCC = 'lori.Waterfrontdentistry@gmail.com';
+export const phoneNumber = '+919557807977';
+export const mail = 'support@exatorial.com';
+export const mailCC = 'support@exatorial.com';
 export const timingKey = 'Timings';
 
 export const businessTimings = [
@@ -13,6 +13,36 @@ export const businessTimings = [
   { day: 'Saturday', timing: '10 am – 3 pm' },
   { day: 'Sunday', timing: 'Closed' },
 ] 
+
+
+export const basicQuestions: Record<string, any> = {
+  'Difference between an Optician, Optometrist, and Ophthalmologist': [
+    'Opticians, optometrists, and ophthalmologists play important yet distinct roles in the field of eye care.',
+    "If you're interested in getting an eye exam or having a prescription written for corrective lenses, you should see an optometrist or ophthalmologist",
+    'Once you have a prescription, an optician will help you choose the right eyeglasses or contacts to fit your prescription',
+  ],
+  "Types of Surgeries": ["An ophthalmologist treats a wide variety of eye diseases and conditions in order to preserve your eye health and improve your vision. Surgeries ophthalmologists  perform include cataract surgery, lens replacement, transplant, glaucoma treatments, LASIK procedures, and more."],
+  "What does an Opthalmologist": ["Specialize in diagnosing and managing eye disorders and diseases. Ophthalmologists have more medical training and education than optometrists, enabling them to treat all kinds of vision problems and eye health conditions, as well as perform eye surgery."],
+  "When should I consider seeing an Opthalmologist": ["Because many common eye diseases have NO noticeable symptoms early on, regular annual eye exams are important to monitor your eye health. If you optometrist sees potential signs of disease, you will be referred to an ophthalmologist."],
+  "What are some symptoms that require Emergency Treatment": [
+    "In some cases, you may be advised to seek emergency medical attention.",
+    "Bulging eyes",
+    "Dark curtain or veil that blocks your vision",
+    "Decreased vision, even if temporary",
+    "Distorted vision",
+    "Double vision",
+    "Excessive tearing",
+    "Eyelid abnormalities",
+    "Floaters (black 'strings' or specks in the vision) and/or flashes of light",
+    "Halos (colored circles around lights)",
+    "Injury to the eye",
+    "Loss of peripheral (side) vision",
+    "Misaligned eyes",
+    "Pain in the eye",
+    "Unusual red eye",
+  ]
+}
+
 
 export const data: Record<string, any> = {
     'Gaps Between Teeth & Missing Teeth': {

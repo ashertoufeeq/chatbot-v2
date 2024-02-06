@@ -20,11 +20,12 @@ const ActionProvider: React.FC<IProps> = ({ createChatBotMessage, setState,actio
   const handleApiResponse = (msg: string) => {
     const t = actions.startLoading()
     ChatApiService.service({msg: firstMsg?'hello': msg }).then(({data})=>{
-      actions.handleTextResponse({text: data.response });
       if(data.response.includes("What dental problems are you experiencing?") && showOptions){
-        actions.handleOptions();
+        actions.handleTextResponse({text: "What doubts are you having?" });
+        actions.handleBasicQuestions();
         setOptionHandled(true);
       }else{
+        actions.handleTextResponse({text: data.response});
         setFirstMsg(false);
         setShowOptions(true);
       }

@@ -1,8 +1,9 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 import ContactUs from './widgets/contactUs'
 import Overview from './widgets/Overview';
-import Suggestions from './widgets/Suggestions';
-import SuggestionsOnText from './widgets/suggestionsOnText';
+// import Suggestions from './widgets/Suggestions';
+import BasicQuestions from './widgets/renderBasicQuestions';
+// import SuggestionsOnText from './widgets/suggestionsOnText';
 import { Button, Divider, Typography, } from 'antd';
 import IConfig from 'react-chatbot-kit/build/src/interfaces/IConfig';
 import { mail, mailCC, phoneNumber } from '../constants';
@@ -45,22 +46,28 @@ const config: IConfig = {
     },
     {
       widgetName: 'overview',
-      widgetFunc: (props:any) => <Overview {...props} />,
+      widgetFunc: (props:any) => <BasicQuestions {...props} />,
       props:{},
       mapStateToProps: ["messages"]
     },
     {
       widgetName: 'suggestions',
-      widgetFunc: (props:any) => <Suggestions {...props} />,
+      widgetFunc: (props:any) => <BasicQuestions {...props} />,
       props:{},
       mapStateToProps: ["messages"]
     },
     {
       widgetName: 'suggestionsOnText',
-      widgetFunc: (props:any) => <SuggestionsOnText {...props} />,
+      widgetFunc: (props:any) => <BasicQuestions {...props} />,
       props:{},
       mapStateToProps: ["messages"]
-    }
+    },
+    {
+      widgetName: 'basicQuestions',
+      widgetFunc: (props:any) => <BasicQuestions {...props} />,
+      props:{},
+      mapStateToProps: ["messages"]
+    },
   ]
 };
 
